@@ -69,7 +69,10 @@ export class ManageDeviceGroups extends LinkedComponent {
 
   render() {
     const { t, deviceGroups = [] } = this.props;
-
+    const btnStyle = {
+      margin: '0px',
+      paddingLeft: '10px'
+    }
     return (
       <Flyout.Container header={t('deviceGroupsFlyout.title')} t={t} onClose={this.onCloseFlyout}>
         <div className="manage-filters-flyout-container">
@@ -78,7 +81,7 @@ export class ManageDeviceGroups extends LinkedComponent {
               ? <DeviceGroupForm {...this.props} {...this.state} cancel={this.closeForm} />
               : <div>
                 <Protected permission={permissions.createDeviceGroups}>
-                  <Btn className="add-btn" svg={svgs.plus} onClick={this.toggleNewFilter}>{t('deviceGroupsFlyout.create')}</Btn>
+                  <Btn className="add-btn" style={btnStyle}  svg={svgs.plus} onClick={this.toggleNewFilter}>{t('deviceGroupsFlyout.create')}</Btn>
                 </Protected>
                 {deviceGroups.length > 0 && <DeviceGroups {...this.props} onEditDeviceGroup={this.onEditDeviceGroup} />}
               </div>
