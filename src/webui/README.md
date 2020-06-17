@@ -42,7 +42,7 @@ The Web UI configuration is stored in [app.config.js](src/app.config.js). You ca
 
 Build, run and test locally
 ===========================
-* `cd ~\pcs-remote-monitoring-webui\`
+* `cd ~\src\webui\`
 * `npm install`
 * `npm start`: Launches the project in browser - watches for code changes and refreshes the page.
 * `npm run build`: Creates a production ready build.
